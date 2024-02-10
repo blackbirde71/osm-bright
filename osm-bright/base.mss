@@ -43,7 +43,6 @@
 #landuse_overlays[type='nature_reserve'][zoom>6] {
   line-color: darken(@wooded,25%);
   line-opacity:  0.3;
-  line-dasharray: 1,1;
   polygon-fill: darken(@wooded,25%);
   polygon-opacity: 0.1;
   [zoom=7] { line-width: 0.4; }
@@ -63,11 +62,11 @@
 #buildings[zoom>=12][zoom<=16] {
   polygon-fill:@building;
   [zoom>=14] {
-    line-color:darken(@building,5%);
+    line-color:@building;
     line-width:0.2;
   }
   [zoom>=16] {
-    line-color:darken(@building,10%);
+    line-color: @building;
     line-width:0.4;
   }
 }
@@ -175,7 +174,7 @@ Map { background-color: @water; }
 
 #barrier_points[zoom>=17][stylegroup = 'divider'] {
   marker-height: 2;
-  marker-fill: #c7c7c7;
+  marker-fill: #083335;
   marker-line-opacity:0;
   marker-allow-overlap:true;
 }
@@ -186,14 +185,12 @@ Map { background-color: @water; }
 
 #barrier_lines[zoom>=17][stylegroup = 'gate'] {
   line-width:2.5;
-  line-color:#aab;
-  line-dasharray:3,2;
+  line-color: #083335;
 }
 
 #barrier_lines[zoom>=17][stylegroup = 'fence'] {
   line-width:1.75;
-  line-color:#aab;
-  line-dasharray:1,1;
+  line-color:#083335;
 }
 
 #barrier_lines[zoom>=17][stylegroup = 'hedge'] {

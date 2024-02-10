@@ -270,35 +270,35 @@
     text-face-name:@sans;
     text-size: 11;
     text-wrap-width:30;
-    text-fill: #888;
-    text-halo-fill: #fff;
+    text-fill: #C5C6CC;
+    text-halo-fill: @place_halo;
     // Specific style overrides for different types of areas:
     [type='park'][zoom>=10] {
       text-face-name: @sans_lt_italic;
-      text-fill: @park * 0.6;
-      text-halo-fill: lighten(@park, 10%);
+      text-fill: @place_text;
+      text-halo-fill: @place_halo;
     }
     [type='golf_course'][zoom>=10] {
-      text-fill: @sports * 0.6;
-      text-halo-fill: lighten(@sports, 10%);
+      text-fill: @place_text;
+      text-halo-fill: @place_halo;
     }
     [type='cemetery'][zoom>=10] {
-      text-fill: @cemetery * 0.6;
-      text-halo-fill: lighten(@cemetery, 10%);
+      text-fill: @place_text;
+      text-halo-fill: @place_halo;
     }
     [type='hospital'][zoom>=10] {
-      text-fill: @hospital * 0.6;
-      text-halo-fill: lighten(@hospital, 10%);
+      text-fill: @place_text;
+      text-halo-fill: @place_halo;
     }
     [type='college'][zoom>=10],
     [type='school'][zoom>=10],
     [type='university'][zoom>=10] {
-      text-fill: @school * 0.6;
-      text-halo-fill: lighten(@school, 10%);
+      text-fill: @place_text;
+      text-halo-fill: @place_halo;
     }
     [type='water'][zoom>=10] {
-      text-fill: @water * 0.6;
-      text-halo-fill: lighten(@water, 10%);
+      text-fill: @place_text;
+      text-halo-fill: @place_halo;
     }
   }
   [zoom=15][area>1600000],
@@ -351,7 +351,7 @@
   text-halo-fill: fadeout(lighten(@water,5%),25%);
   text-halo-radius: 1;
   text-placement: line;
-  text-repeat-distance: 400;
+  text-min-distance: 400;
   text-size: 10;
   [type='river'][zoom=15],
   [type='canal'][zoom=17] {
@@ -372,7 +372,7 @@
   shield-name: "[ref]";
   shield-size: 9;
   shield-face-name: @sans_bold;
-  shield-fill: #fff;
+  shield-fill: #71727A;
   shield-file: url(img/shield-motorway-1.png);
   [type='motorway'] {
     [reflen=1] { shield-file: url(img/shield-motorway-1.png); }
@@ -408,11 +408,11 @@
   text-fill:@road_text;
   text-halo-fill:@road_halo;
   text-halo-radius:1;
-  text-repeat-distance:60;
+  text-min-distance:60;
   text-size:10;
-  [zoom=11] { text-repeat-distance:70; }
-  [zoom=12] { text-repeat-distance:80; }
-  [zoom=13] { text-repeat-distance:100; }
+  [zoom=11] { text-min-distance:70; }
+  [zoom=12] { text-min-distance:80; }
+  [zoom=13] { text-min-distance:100; }
 }
 
 #mainroad_label[type='primary'][zoom>12],
@@ -424,7 +424,7 @@
   text-fill:@road_text;
   text-halo-fill:@road_halo;
   text-halo-radius:1;
-  text-repeat-distance:60;
+  text-min-distance:60;
   text-size:11;
 }
 
@@ -436,7 +436,7 @@
   text-fill:@road_text;
   text-halo-fill:@road_halo;
   text-halo-radius:1;
-  text-repeat-distance:60;
+  text-min-distance:60;
   text-size:11;
 }
 
